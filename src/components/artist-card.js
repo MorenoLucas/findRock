@@ -5,12 +5,13 @@ class ArtistCard extends React.Component {
     return (
       <div className="col-3">
         <div className="item">
+          {/* Los props se llaman asi y se pone como atributo en el componente */}
           <img
-            src="https://historico.crazyminds.es/wp-content/uploads/Bandalos-Chinos-Crazyminds.es_.jpg"
+            src={this.props.img}
             alt="foto de grupo"
-            className="pic"
+            className="pic img-fluid"
           ></img>
-          <p className="titulo">Banda Los Chinos</p>
+          <p className="titulo">{this.props.title}</p>
         </div>
       </div>
     );
