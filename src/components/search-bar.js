@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
                   className="form-control"
                   name="busqueda"
                   id="buscar"
-                  // value={this.state.busqueda}
+                  value={this.props.busqueda}
                   placeholder="Busca una banda"
                   // le mando al padre los cambios del input
                   onChange={this.props.onChange}
