@@ -16,7 +16,8 @@ class PageSearchResult extends Component {
     return (
       <React.Fragment>
         <SearchBar onChange={this.changeHandle} />
-        <SearchResult />
+        {/* le pasamos la información al otro hijo */}
+        <SearchResult busqueda={this.state.busqueda} />
       </React.Fragment>
     );
   }
