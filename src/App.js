@@ -11,7 +11,8 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/busqueda" component={PageSearchResult}></Route>
+          {/* para que sea extact  */}
+          <Route exact path="/busqueda" component={PageSearchResult}></Route>
           <Route path="/artista" component={PageArtist}></Route>
           <Route path="/" component={PageHome}></Route>
         </Switch>

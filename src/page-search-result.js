@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import SearchResult from "./components/search-result";
 import SearchBar from "./components/search-bar";
-
 class PageSearchResult extends Component {
   state = {
     busqueda: "",
