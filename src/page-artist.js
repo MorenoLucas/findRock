@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SearchBar from "./components/search-bar";
-import SimilarArtists from "./components/similar-artists";
+import SimilarArtist from "./components/similar-artist";
 import "./page-artist.css";
 class PageSearchResult extends Component {
   state = {
@@ -23,13 +23,13 @@ class PageSearchResult extends Component {
           <div className="row centrar">
             <div className="col-md-3"></div>
             <div className="col-md-6">
-              <img className="pic-artist margenes-50"></img>
+              <img alt="foto artista" className="pic-artist margenes-50"></img>
               <h2>Nombre</h2>
               <p>lorem ipsum dolor sit am</p>
             </div>
           </div>
           <div className="row centrar">
-            <SimilarArtists />
+            <SimilarArtist />
           </div>
         </div>
       </React.Fragment>
