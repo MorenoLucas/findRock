@@ -1,0 +1,13 @@
+pic-artist {
+  width: 300px;
+  border-radius: 50%;
+  border: solid 1px #f4f4f4;
+}
+
+.top-50 {
+  margin-top: 50px;
+}
+.margenes-50 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
