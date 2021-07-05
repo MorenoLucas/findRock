@@ -11,9 +11,9 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/busqueda" Component={PageSearchResult}></Route>
-          <Route path="/artista" Component={PageArtist}></Route>
-          <Route path="/" Component={PageHome}></Route>
+          <Route path="/busqueda" component={PageSearchResult}></Route>
+          <Route path="/artista" component={PageArtist}></Route>
+          <Route path="/" component={PageHome}></Route>
         </Switch>
       </BrowserRouter>
     );
