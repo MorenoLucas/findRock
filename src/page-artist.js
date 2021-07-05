@@ -26,8 +26,10 @@ class PageSearchResult extends Component {
               <img className="pic-artist margenes-50"></img>
               <h2>Nombre</h2>
               <p>lorem ipsum dolor sit am</p>
-              <SimilarArtists />
             </div>
+          </div>
+          <div className="row centrar">
+            <SimilarArtists />
           </div>
         </div>
       </React.Fragment>
