@@ -1,5 +1,6 @@
 import React from "react";
 import ArtistCard from "./artist-card";
+import Loading from "./loading";
 import "bootstrap/dist/css/bootstrap.css";
 class SearchResult extends React.Component {
   state = {
@@ -19,7 +20,7 @@ class SearchResult extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.loading && <h1>Loading</h1>}
+        {this.state.loading && <Loading />}
         <div className="container">
           <div className="row">
             {this.state.data.results.map((item, i) => {
