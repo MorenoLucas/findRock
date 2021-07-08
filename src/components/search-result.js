@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 class SearchResult extends React.Component {
   state = {
     loading: false,
+    error: null,
     data: { results: [] },
   };
   componentDidMount() {
@@ -14,13 +15,18 @@ class SearchResult extends React.Component {
     this.setState({ loading: true });
     const response = await fetch(url);
     const data = await response.json();
+    if (data.error) {
+      this.setState({ loading: false, erorr: true });
+    } else {
+      this.setState({ loading: false, erorr: false, data: data });
+    }
     console.log("data", data);
-    this.setState({ loading: false, data: data });
   };
   render() {
     return (
       <React.Fragment>
         {this.state.loading && <Loading />}
+        {this.state.error && <h1>Error</h1>}
         <div className="container">
           <div className="row">
             {this.state.data.results.map((item, i) => {

@@ -5,6 +5,15 @@ class PageSearchResult extends Component {
   state = {
     busqueda: "",
   };
+  componentDidMount() {
+    let search = this.props.history.location.search
+      .substr(1)
+      .replace("%20", " ");
+    console.log("lo q trae", search);
+    this.setState({
+      busqueda: search,
+    });
+  }
   // recibo los cambios del search y se lo asigno al estado busqueda
   changeHandle = (e) => {
     this.setState({

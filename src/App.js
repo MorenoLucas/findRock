@@ -13,7 +13,7 @@ class App extends Component {
         <Layout>
           <Switch>
             {/* para que sea extact  */}
-            <Route exact path="/busqueda" component={PageSearchResult}></Route>
+            <Route path="/busqueda" component={PageSearchResult}></Route>
             <Route path="/artista" component={PageArtist}></Route>
             <Route path="/" component={PageHome}></Route>
           </Switch>
