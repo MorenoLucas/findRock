@@ -1,16 +1,39 @@
 import React, { Component } from "react";
 import SearchBar from "./components/search-bar";
 import SimilarArtist from "./components/similar-artist";
+import Loading from "./components/loading";
+
 import "./page-artist.css";
 class PageSearchResult extends Component {
   state = {
+    loading: false,
+    error: null,
     busqueda: "",
+    data: { artist: {} },
   };
+  componentDidMount() {
+    const key = "9ce37d4e7dd9ec9aff9ae74634147612";
+
+    this.fetchData(
+      `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key=${key}&format=json`
+    );
+  }
   // recibo los cambios del search y se lo asigno al estado busqueda
   changeHandle = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
+  };
+  fetchData = async (url) => {
+    this.setState({ loading: true });
+    const response = await fetch(url);
+    const data = await response.json();
+    if (data.error) {
+      this.setState({ loading: false, erorr: true });
+    } else {
+      this.setState({ loading: false, erorr: false, data: data });
+    }
+    console.log("data", data);
   };
   render() {
     return (
@@ -19,12 +42,18 @@ class PageSearchResult extends Component {
           onChange={this.changeHandle}
           busqueda={this.state.busqueda}
         />
+        {this.state.loading && <Loading />}
+        {this.state.error && <h1>Error</h1>}
         <div className="container">
           <div className="row centrar">
             <div className="col-md-3"></div>
             <div className="col-md-6">
-              <img alt="foto artista" className="pic-artist margenes-50"></img>
-              <h2>Nombre</h2>
+              <img
+                src={this.state.artist.image[3]["#text"]}
+                alt="foto artista"
+                className="pic-artist margenes-50"
+              ></img>
+              <h2>{this.state.data.artist.name}</h2>
               <p>lorem ipsum dolor sit am</p>
             </div>
           </div>
