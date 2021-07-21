@@ -9,7 +9,20 @@ class PageSearchResult extends Component {
     loading: false,
     error: null,
     busqueda: "",
-    data: { artist: {} },
+    data: {
+      artist: {
+        image: [
+          { "#text": "" },
+          { "#text": "" },
+          { "#text": "" },
+          { "#text": "" },
+          { "#text": "" },
+        ],
+        bio: {
+          summary: "",
+        },
+      },
+    },
   };
   componentDidMount() {
     const key = "9ce37d4e7dd9ec9aff9ae74634147612";
@@ -49,12 +62,12 @@ class PageSearchResult extends Component {
             <div className="col-md-3"></div>
             <div className="col-md-6">
               <img
-                src={this.state.artist.image[3]["#text"]}
+                src={this.state.data.artist.image[2]["#text"]}
                 alt="foto artista"
                 className="pic-artist margenes-50"
               ></img>
               <h2>{this.state.data.artist.name}</h2>
-              <p>lorem ipsum dolor sit am</p>
+              <p>{this.state.data.artist.bio.summary}</p>
             </div>
           </div>
           <div className="row centrar">
