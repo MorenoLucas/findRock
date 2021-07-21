@@ -21,6 +21,15 @@ class PageSearchResult extends Component {
         bio: {
           summary: "",
         },
+        similar: {
+          artist: [
+            {
+              name: "",
+              url: "",
+              image: [{ "#text": "" }, { "#text": "" }, { "#text": "" }],
+            },
+          ],
+        },
       },
     },
   };
@@ -71,7 +80,7 @@ class PageSearchResult extends Component {
             </div>
           </div>
           <div className="row centrar">
-            <SimilarArtist />
+            <SimilarArtist data={this.state.data.artist.similar.artist} />
           </div>
         </div>
       </React.Fragment>
