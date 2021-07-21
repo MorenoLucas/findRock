@@ -14,7 +14,7 @@ class SimilarArtists extends React.Component {
           {this.props.data.slice(0, 4).map((artist, index) => {
             return (
               <ArtistCard
-                img={artist.image[3]["#text"]}
+                img={artist.image[2]["#text"]}
                 titulo={artist.name}
                 key={index}
               />

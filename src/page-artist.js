@@ -35,9 +35,9 @@ class PageSearchResult extends Component {
   };
   componentDidMount() {
     const key = "9ce37d4e7dd9ec9aff9ae74634147612";
-
+    let artista = this.props.history.location.search.substr(1);
     this.fetchData(
-      `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key=${key}&format=json`
+      `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artista}&api_key=${key}&format=json`
     );
   }
   // recibo los cambios del search y se lo asigno al estado busqueda

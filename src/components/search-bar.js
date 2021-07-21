@@ -1,6 +1,6 @@
 import React from "react";
 import "./search-bar.css";
-// import Logo from "../logo.svg";
+import Logo from "../logo.svg";
 import { Link } from "react-router-dom";
 
 class SearchBar extends React.Component {
@@ -21,7 +21,9 @@ class SearchBar extends React.Component {
       <React.Fragment>
         <div className="row">
           <div className="col-md-2">
-            <Link to="/">Logo</Link>
+            <Link to="/">
+              <img src={Logo} className="logo-barra" />
+            </Link>
           </div>
           <div className="col-md-4">
             <form className="form-inline" onSubmit={this.handleSubmit}>

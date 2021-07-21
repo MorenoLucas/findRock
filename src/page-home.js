@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Logo from "./logo.svg";
 import "./page-home.css";
 class PageHome extends React.Component {
   state = {
@@ -19,7 +19,7 @@ class PageHome extends React.Component {
       <div className="container">
         <div className="row centrado">
           <div className="col-md-6 centrar">
-            <h1 id="logo">LOGO</h1>
+            <img id="logo" src={Logo} />
             <form className="form-inline" onSubmit={this.handleSubmit}>
               <div className="busqueda">
                 <input
