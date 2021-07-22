@@ -22,7 +22,7 @@ class SearchBar extends React.Component {
         <div className="row">
           <div className="col-md-2">
             <Link to="/">
-              <img src={Logo} className="logo-barra" />
+              <img src={Logo} className="logo-barra" alt="logo" />
             </Link>
           </div>
           <div className="col-md-4">

@@ -2,9 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "./logo.svg";
 import "./page-home.css";
+import ReactDOM from "react-dom";
+import Modal from "./components/modal.js";
+
 class PageHome extends React.Component {
   state = {
     busqueda: "",
+    modal: false,
+  };
+  handleClick = (e) => {
+    e.preventDefault();
+    this.setState({
+      modal: true,
+    });
   };
   handldeSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +29,7 @@ class PageHome extends React.Component {
       <div className="container">
         <div className="row centrado">
           <div className="col-md-6 centrar">
-            <img id="logo" src={Logo} />
+            <img id="logo" src={Logo} alt="Logo" />
             <form className="form-inline" onSubmit={this.handleSubmit}>
               <div className="busqueda">
                 <input
@@ -38,11 +48,19 @@ class PageHome extends React.Component {
                     Search
                   </button>
                 </Link>
-                <button className="btng">Lucas</button>
+                <button className="btng" onClick={this.handleClick}>
+                  Lucas
+                </button>
               </div>
             </form>
           </div>
         </div>
+        {ReactDOM.createPortal(
+          <Modal estado={this.state.modal}>
+            <h4>Lucas Front-End Developer</h4>
+          </Modal>,
+          document.getElementById("teleport")
+        )}
       </div>
     );
   }
