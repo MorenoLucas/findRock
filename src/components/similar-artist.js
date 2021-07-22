@@ -15,7 +15,7 @@ class SimilarArtists extends React.Component {
             return (
               <ArtistCard
                 img={artist.image[2]["#text"]}
-                titulo={artist.name}
+                title={artist.name}
                 key={index}
               />
             );
